@@ -1,0 +1,122 @@
+<div style="position: relative; height: 250px; width: 100%; background: url('../../../assets/gallery/img2.avif') no-repeat center; background-size: cover; ">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; color: rgb(16, 164, 255); flex-direction: column; justify-content: center; align-items: center;">
+      <h1 style="font-size: 400%; font-weight: bold; padding-right: 60%; text-shadow: 2px 2px 4px rgba(0,0,0,5);">GALLERY</h1>
+    </div>
+  </div>
+  <div style="padding-left: 40%; background-color:rgb(230, 230, 230)" >
+    <button class="option-button btn btn-dark" data-content="form4">ALL</button>
+    <button class="option-button btn btn-dark" data-content="form1">BEACH</button>
+    <button class="option-button btn btn-dark" data-content="form2">CAMPFIRE</button>
+    <button class="option-button btn btn-dark" data-content="form3">TRUCKING</button>
+  </div>
+  <div class="row">
+    <div id="content-div">
+      <div class="all_img">
+        <img src="../../../assets/gallery/img1.png" alt="">
+        <img src="../../../assets/gallery/img2.png" alt="">
+        <img src="../../../assets/gallery/img3.png" alt="">
+        <img src="../../../assets/gallery/img7.png" alt="">
+        <img src="../../../assets/gallery/b8.png" alt="">
+        <img src="../../../assets/gallery/c1.png" alt="">
+        <img src="../../../assets/gallery/t2.png" alt="">
+        <img src="../../../assets/gallery/b5.png" alt="">
+        <img src="../../../assets/gallery/img2.png" alt="">
+        <img src="../../../assets/gallery/t6.png" alt="">
+        <img src="../../../assets/gallery/c2.png" alt="">
+        <img src="../../../assets/gallery/c9.png" alt="">
+        <img src="../../../assets/gallery/img3.png" alt="">
+        <img src="../../../assets/gallery/t1.png" alt="">
+        <img src="../../../assets/gallery/c2.png" alt="">
+        <img src="../../../assets/gallery/b3.png" alt="">
+      </div>    
+    </div>
+  </div>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contentDiv = document.getElementById('content-div');
+    const buttons = document.querySelectorAll('.option-button');
+
+    const forms = {
+        form1: `
+            <div class="all_img">
+                <img src="./image/b2.png" alt="">
+                <img src="./image/b3.png" alt="">
+                <img src="./image/b5.png" alt="">
+                <img src="./image/b6.png" alt="">
+                <img src="./image/b7.png" alt="">
+                <img src="./image/b8.png" alt="">
+                <img src="./image/b9.png" alt="">
+                <img src="./image/b10.png" alt="">
+                <img src="./image/b11.png" alt="">
+                <img src="./image/b16.png" alt="">
+                <img src="./image/b5.png" alt="">
+                <img src="./image/b6.png" alt="">
+            </div>
+        `,
+        form2: `
+            <div class="all_img">
+                <img src="./image/c1.png" alt="">
+                <img src="./image/c2.png" alt="">
+                <img src="./image/c3.png" alt="">
+                <img src="./image/c4.png" alt="">
+                <img src="./image/c5.png" alt="">
+                <img src="./image/c6.png" alt="">
+                <img src="./image/c18.png" alt="">
+                <img src="./image/c9.png" alt="">
+                <img src="./image/c10.png" alt="">
+                <img src="./image/c11.png" alt="">
+                <img src="./image/c17.png" alt="">
+                <img src="./image/c18.png" alt="">
+            </div>
+        `,
+        form3: `
+            <div class="all_img">
+                <img src="./image/t1.png" alt="">
+                <img src="./image/t2.png" alt="">
+                <img src="./image/t3.png" alt="">
+                <img src="./image/t4.png" alt="">
+                <img src="./image/t5.png" alt="">
+                <img src="./image/t6.png" alt="">
+                <img src="./image/t7.png" alt="">
+                <img src="./image/t10.png" alt="">
+                <img src="./image/t12.png" alt="">
+                <img src="./image/t11.png" alt="">
+                <img src="./image/t14.png" alt="">
+                <img src="./image/t15.png" alt="">
+                <img src="./image/t16.png" alt="">
+                <img src="./image/t8.png" alt="">
+                <img src="./image/t9.png" alt="">
+                <img src="./image/t3.png" alt="">
+            </div>
+        `,
+        form4: `
+            <div class="all_img">
+                 <img src="./image/img1.png" alt="">
+                 <img src="./image/img2.png" alt="">
+                 <img src="./image/img3.png" alt="">
+                 <img src="./image/img7.png" alt="">
+                 <img src="./image/b8.png" alt="">
+                 <img src="./image/c1.png" alt="">
+                 <img src="./image/t2.png" alt="">
+                 <img src="./image/b5.png" alt="">
+                 <img src="./image/img2.png" alt="">
+                 <img src="./image/t6.png" alt="">
+                 <img src="./image/c2.png" alt="">
+                 <img src="./image/c9.png" alt="">
+                 <img src="./image/img3.png" alt="">
+                 <img src="./image/t1.png" alt="">
+                 <img src="./image/c2.png" alt="">
+                 <img src="./image/b3.png" alt="">
+            </div> 
+        `
+    };
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const formKey = this.getAttribute('data-content');
+            contentDiv.innerHTML = forms[formKey];
+        });
+    });
+});
+
+  </script>  

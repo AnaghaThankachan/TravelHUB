@@ -1,0 +1,586 @@
+<div style="position: relative; height: 250px; width: 100%; background: url('../../../assets/booking/img2.avif') no-repeat center; background-size: cover; ">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; color: rgb(16, 164, 255); flex-direction: column; justify-content: center; align-items: center;">
+      <h1 style="font-size: 400%; font-weight: bold; padding-right: 60%; text-shadow: 2px 2px 4px rgba(0,0,0,5);">BOOKING</h1>
+    </div>
+  </div>
+  <div style="padding-left: 25%; background-color:rgb(230, 230, 230)" >
+    <button class="option-button btn btn-dark" data-content="form4">Hotel Booking</button>
+    <button class="option-button btn btn-dark" data-content="form1">Flight Booking</button>
+    <button class="option-button btn btn-dark" data-content="form2">Cruise Booking</button>
+    <button class="option-button btn btn-dark" data-content="form3">Car Booking</button>
+  </div>
+  
+  <div id="content-div">
+    
+  </div>
+
+  <script>
+    // script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const contentDiv = document.getElementById('content-div');
+    const buttons = document.querySelectorAll('.option-button');
+
+    const forms = {
+        form4: `
+            <form>
+                <div class="row">
+                    <div class="col-md-9" style="align-item:center; padding-top:30px;">
+                        <h5>PERSONAL INFORMATION</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">   
+                            <div class="col-md-6">
+                                <label for="fname" class="form-label">First Name:</label>
+                                <input type="text" id="fname" name="fname" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lname" class="form-label">Last Name:</label>
+                                <input type="text" id="lname" name="lname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email1" class="form-label">Verify Email:</label>
+                                <input type="email" id="email1" name="email1" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="citizenship" class="form-label">Select Citizenship:</label>
+                                <select id="citizen" name="citizen" class="form-control">
+                                    <option>United States</option>
+                                    <option>United Kingdom (+44)</option>
+                                    <option>India</option>
+                                    <option>Japan</option>
+                                    <option>Germany</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dob" class="form-label">Date of Birth:</label>
+                                <input type="date" id="dob" name="dob" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="country-code" class="form-label">Select Country Code:</label>
+                                <select id="country-code" name="country-code" class="form-control">
+                                    <option value="+1">United States (+1)</option>
+                                    <option value="+44">United Kingdom (+44)</option>
+                                    <option value="+91" selected>India (+91)</option>
+                                    <option value="+81">Japan (+81)</option>
+                                    <option value="+49">Germany (+49)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone No:</label>
+                                <input type="number" id="phone" name="phone" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="Home address" class="form-label">Home Address:</label>
+                                <input type="text" id="home" name="home" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="State" class="form-label">State:</label>
+                                <input type="text" id="state" name="state" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="padding-top:30px;">
+                        <img src="./image/bookhotel.jpg" alt="..." style="height:240px; width:300px;">
+                        <h6><b>Hotel Hilton</b></h6>
+                        <i>PARIS FRANCE</i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9" style="align-item:center; padding-top:30px;">
+                        <h5>CARD INFORMATION</h5>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="cardtype" class="form-label">Card Type:</label>
+                                <input type="text" id="cardtype" name="cardtype" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cardhname" class="form-label">Card Holder Name:</label>
+                                <input type="text" id="chname" name="chname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="card number" class="form-label">Card Number:</label>
+                                <input type="number" id="cnumber" name="cnumber" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cardid number" class="form-label">Card Identification Number:</label>
+                                <input type="number" id="cidnumber" name="cidnumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="" class="form-label">Expiration Month:</label>
+                                <input type="date" id="exm" name="exm" class="form-control">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="" class="form-label">Expiration Year:</label>
+                                <input type="date" id="exy" name="exy" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="" class="form-label">Billing zip code:</label>
+                                <input type="text" id="billing" name="billing" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="align-item:center; padding-top:30px;">
+                                <button type="submit" class="btn btn-outline-primary">CONFIRM BOOKING</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>Need Help?</h6>
+                        <p>We would be more than happy to help you.Our team advisor are 24/7 at your service to help you.</p>
+                        <p>contact no:895799202092</p>
+                    </div>
+                </div>          
+            </form>
+        `,
+        form1: `
+            <form>
+                <div class="row">
+                    <div class="col-md-9" style="align-item:center; padding-top:30px;">
+                        <h5>PERSONAL INFORMATION</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">   
+                            <div class="col-md-6">
+                                <label for="fname" class="form-label">First Name:</label>
+                                <input type="text" id="fname" name="fname" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lname" class="form-label">Last Name:</label>
+                                <input type="text" id="lname" name="lname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email1" class="form-label">Verify Email:</label>
+                                <input type="email" id="email1" name="email1" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="citizenship" class="form-label">Select Citizenship:</label>
+                                <select id="citizen" name="citizen" class="form-control">
+                                    <option>United States</option>
+                                    <option>United Kingdom (+44)</option>
+                                    <option>India</option>
+                                    <option>Japan</option>
+                                    <option>Germany</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dob" class="form-label">Date of Birth:</label>
+                                <input type="date" id="dob" name="dob" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="country-code" class="form-label">Select Country Code:</label>
+                                <select id="country-code" name="country-code" class="form-control">
+                                    <option value="+1">United States (+1)</option>
+                                    <option value="+44">United Kingdom (+44)</option>
+                                    <option value="+91" selected>India (+91)</option>
+                                    <option value="+81">Japan (+81)</option>
+                                    <option value="+49">Germany (+49)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone No:</label>
+                                <input type="number" id="phone" name="phone" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="Home address" class="form-label">Home Address:</label>
+                                <input type="text" id="home" name="home" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="State" class="form-label">State:</label>
+                                <input type="text" id="state" name="state" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="padding-top:30px;">
+                        <img src="./image/bookflight.jpg" alt="..." style="height:240px; width:300px;">
+                        <h6><b>Delhi to Banglore</b></h6>
+                        <i>ONEWAY FLIGHT</i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9" style="align-item:center; padding-top:30px;">
+                        <h5>CARD INFORMATION</h5>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="cardtype" class="form-label">Card Type:</label>
+                                <input type="text" id="cardtype" name="cardtype" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cardhname" class="form-label">Card Holder Name:</label>
+                                <input type="text" id="chname" name="chname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="card number" class="form-label">Card Number:</label>
+                                <input type="number" id="cnumber" name="cnumber" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cardid number" class="form-label">Card Identification Number:</label>
+                                <input type="number" id="cidnumber" name="cidnumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="" class="form-label">Expiration Month:</label>
+                                <input type="date" id="exm" name="exm" class="form-control">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="" class="form-label">Expiration Year:</label>
+                                <input type="date" id="exy" name="exy" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="" class="form-label">Billing zip code:</label>
+                                <input type="text" id="billing" name="billing" class="form-control">
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div style="align-item:center; padding-top:30px;">
+                                <button type="submit" class="btn btn-outline-primary">CONFIRM BOOKING</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>Need Help?</h6>
+                        <p>We would be more than happy to help you.Our team advisor are 24/7 at your service to help you.</p>
+                        <p>contact no:895799202092</p>
+                    </div>
+                </div>          
+            </form>
+        `,
+        form2: `
+            <form>
+                <div class="row">
+                    <div class="col-md-9" style="align-item:center; padding-top:30px;">
+                        <h5>PERSONAL INFORMATION</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">   
+                            <div class="col-md-6">
+                                <label for="fname" class="form-label">First Name:</label>
+                                <input type="text" id="fname" name="fname" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lname" class="form-label">Last Name:</label>
+                                <input type="text" id="lname" name="lname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email1" class="form-label">Verify Email:</label>
+                                <input type="email" id="email1" name="email1" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="citizenship" class="form-label">Select Citizenship:</label>
+                                <select id="citizen" name="citizen" class="form-control">
+                                    <option>United States</option>
+                                    <option>United Kingdom (+44)</option>
+                                    <option>India</option>
+                                    <option>Japan</option>
+                                    <option>Germany</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dob" class="form-label">Date of Birth:</label>
+                                <input type="date" id="dob" name="dob" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="country-code" class="form-label">Select Country Code:</label>
+                                <select id="country-code" name="country-code" class="form-control">
+                                    <option value="+1">United States (+1)</option>
+                                    <option value="+44">United Kingdom (+44)</option>
+                                    <option value="+91" selected>India (+91)</option>
+                                    <option value="+81">Japan (+81)</option>
+                                    <option value="+49">Germany (+49)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone No:</label>
+                                <input type="number" id="phone" name="phone" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="Home address" class="form-label">Home Address:</label>
+                                <input type="text" id="home" name="home" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="State" class="form-label">State:</label>
+                                <input type="text" id="state" name="state" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="padding-top:30px;">
+                        <img src="./image/bookcruise.jpg" alt="..." style="height:240px; width:300px;">
+                        <h6><b>Baja Mexico</b></h6>
+                        <i>4 NIGHTS</i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9" style="align-item:center; padding-top:30px;">
+                        <h5>CARD INFORMATION</h5>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="cardtype" class="form-label">Card Type:</label>
+                                <input type="text" id="cardtype" name="cardtype" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cardhname" class="form-label">Card Holder Name:</label>
+                                <input type="text" id="chname" name="chname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="card number" class="form-label">Card Number:</label>
+                                <input type="number" id="cnumber" name="cnumber" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cardid number" class="form-label">Card Identification Number:</label>
+                                <input type="number" id="cidnumber" name="cidnumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="" class="form-label">Expiration Month:</label>
+                                <input type="date" id="exm" name="exm" class="form-control">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="" class="form-label">Expiration Year:</label>
+                                <input type="date" id="exy" name="exy" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="" class="form-label">Billing zip code:</label>
+                                <input type="text" id="billing" name="billing" class="form-control">
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div style="align-item:center; padding-top:30px;">
+                                <button type="submit" class="btn btn-outline-primary">CONFIRM BOOKING</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="align-item:center; padding-top:30px;">
+                        <h6>Need Help?</h6>
+                        <p>We would be more than happy to help you.Our team advisor are 24/7 at your service to help you.</p>
+                        <p>contact no:895799202092</p>
+                    </div>
+                </div>          
+            </form>
+        `,
+        form3: `
+            <form>
+                <div class="row">
+                    <div class="col-md-9" style="align-item:center; padding-top:30px;">
+                        <h5>PERSONAL INFORMATION</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">   
+                            <div class="col-md-6">
+                                <label for="fname" class="form-label">First Name:</label>
+                                <input type="text" id="fname" name="fname" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lname" class="form-label">Last Name:</label>
+                                <input type="text" id="lname" name="lname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email1" class="form-label">Verify Email:</label>
+                                <input type="email" id="email1" name="email1" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="citizenship" class="form-label">Select Citizenship:</label>
+                                <select id="citizen" name="citizen" class="form-control">
+                                    <option>United States</option>
+                                    <option>United Kingdom (+44)</option>
+                                    <option>India</option>
+                                    <option>Japan</option>
+                                    <option>Germany</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dob" class="form-label">Date of Birth:</label>
+                                <input type="date" id="dob" name="dob" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="country-code" class="form-label">Select Country Code:</label>
+                                <select id="country-code" name="country-code" class="form-control">
+                                    <option value="+1">United States (+1)</option>
+                                    <option value="+44">United Kingdom (+44)</option>
+                                    <option value="+91" selected>India (+91)</option>
+                                    <option value="+81">Japan (+81)</option>
+                                    <option value="+49">Germany (+49)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone No:</label>
+                                <input type="number" id="phone" name="phone" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="Home address" class="form-label">Home Address:</label>
+                                <input type="text" id="home" name="home" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="State" class="form-label">State:</label>
+                                <input type="text" id="state" name="state" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="padding-top:30px;">
+                        <img src="./image/bookcar.jpg" alt="..." style="height:240px; width:300px;">
+                        <h6><b>Audi</b></h6>
+                        <i>PER DAY</i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9" style="align-item:center; padding-top:30px;">
+                        <h5>CARD INFORMATION</h5>
+                        
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="cardtype" class="form-label">Card Type:</label>
+                                <input type="text" id="cardtype" name="cardtype" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cardhname" class="form-label">Card Holder Name:</label>
+                                <input type="text" id="chname" name="chname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="card number" class="form-label">Card Number:</label>
+                                <input type="number" id="cnumber" name="cnumber" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cardid number" class="form-label">Card Identification Number:</label>
+                                <input type="number" id="cidnumber" name="cidnumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="" class="form-label">Expiration Month:</label>
+                                <input type="date" id="exm" name="exm" class="form-control">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="" class="form-label">Expiration Year:</label>
+                                <input type="date" id="exy" name="exy" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="" class="form-label">Billing zip code:</label>
+                                <input type="text" id="billing" name="billing" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9" style="align-item:center; padding-top:30px; text-align:right; padding-right:10%;">
+                                <h5>ARRIVAL/FLIGHT INFORMATION</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="" class="form-label">Airline name:</label>
+                                <input type="text" id="aname" name="aname" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="arriving number" class="form-label">Arriving Number:</label>
+                                <input type="number" id="anumber" name="anumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="align-item:center; padding-top:30px;">
+                                <button type="submit" class="btn btn-outline-primary">CONFIRM BOOKING</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>Need Help?</h6>
+                        <p>We would be more than happy to help you.Our team advisor are 24/7 at your service to help you.</p>
+                        <p>contact no:895799202092</p>
+                    </div>
+                </div>          
+            </form>                        
+            </form>        `
+    };
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const formKey = this.getAttribute('data-content');
+            contentDiv.innerHTML = forms[formKey];
+        });
+    });
+});
+
+  </script>
